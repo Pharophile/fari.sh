@@ -126,7 +126,7 @@ function pharo_build_image {
 
 # **List** basenames of load scripts found in the current directory.
 function pharo_load_scripts {
-    find -E . -maxdepth 1 -regex '.*\.(load|local)\.st' \
+    find . -regextype egrep -maxdepth 1 -regex '.*\.(load|local)\.st' \
         | sed -E 's/\.(load|local)\.st$//' \
         | uniq
 }
